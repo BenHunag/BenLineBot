@@ -127,11 +127,11 @@ def handle_message(event):
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
-                    #messages=[TextMessage(text=event.message.text)]
-                        messages=[TextMessage(
-                        text='請選擇錯誤代碼',
-                        quick_reply=quickReply
-                    )]
+                    messages=[TextMessage(text=event.message.text)]
+                    #     messages=[TextMessage(
+                    #     text='請選擇錯誤代碼',
+                    #     quick_reply=quickReply
+                    # )]
                 )
             )
 
