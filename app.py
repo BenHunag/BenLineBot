@@ -90,36 +90,36 @@ def handle_message(event):
                         action=MessageAction(
                             label="49408",
                             text="閘道器系統錯誤，請洽資訊人員處理"
-                        ),
-                        image_url=message_icon
+                        )
+                        # image_url=message_icon
                     ),
                         QuickReplyItem(
                         action=MessageAction(
                             label="49409",
                             text="封裝之CDA未符合公告之Schema"
-                        ),
-                        image_url=message_icon
+                        )
+                        # image_url=message_icon
                     ),
                          QuickReplyItem(
                         action=MessageAction(
                             label="49410",
                             text="封裝之CDA欄位缺少"
-                        ),
-                        image_url=message_icon
+                        )
+                        # image_url=message_icon
                     ),
                         QuickReplyItem(
                         action=MessageAction(
                             label="49411",
                             text="封裝之CDA無機構數位章"
-                        ),
-                        image_url=message_icon
+                        )
+                        # image_url=message_icon
                     ),
                         QuickReplyItem(
                         action=MessageAction(
                             label="49413",
                             text="缺少部分或所有影像，請先傳送影像後再傳送電子病歷影像報告"
-                        ),
-                        image_url=message_icon
+                        )
+                        # image_url=message_icon
                     )
                 ]
              )
@@ -127,11 +127,11 @@ def handle_message(event):
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
-                    messages=[TextMessage(text=event.message.text)]
-                    #     messages=[TextMessage(
-                    #     text='請選擇錯誤代碼',
-                    #     quick_reply=quickReply
-                    # )]
+                    #messages=[TextMessage(text=event.message.text)]
+                        messages=[TextMessage(
+                        text='請選擇錯誤代碼',
+                        quick_reply=quickReply
+                    )]
                 )
             )
 
