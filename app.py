@@ -156,8 +156,16 @@ def handle_message(event):
 
             response = request.get(searchUrl)
 
-            url = response.body
-            
+
+    # Extract the image URL from the response (modify this based on API's format)
+
+            data = response.json()  # Assuming the response is JSON
+            url = data['imageUrl']  # Assuming the image URL key is 'imageUrl'
+
+            print("Error: Could not extract image URL from response.")
+        # Consider sending an appropriate error message to the user
+            pass
+
             # url = 'https://generateimageapi20241121151339.azurewebsites.net/images/84df084a-66c9-45da-afff-61ed831fe323.png'
 
             # url = url.replace("http", "https")
