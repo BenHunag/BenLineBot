@@ -45,8 +45,6 @@ from linebot.v3.webhooks import (
     TextMessageContent
 )
 import os
-import requests
-from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
@@ -152,12 +150,10 @@ def handle_message(event):
 
 
 
-    elif text == '許願會飛的貓':
+    elif text == '許願貓貓':
+        
             searchUrl = 'https://generateimageapi20241121151339.azurewebsites.net/ImageAI?prompt=cat'
-
-            response = requests.get(searchUrl)
-            soup = BeautifulSoup(response.text, 'html.parser')
-            text = soup.get_text()
+            url = 'https://generateimageapi20241121151339.azurewebsites.net/images/84df084a-66c9-45da-afff-61ed831fe323.png'
 
             # url = url.replace("http", "https")
             # app.logger.info("url=" + url)
