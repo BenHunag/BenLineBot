@@ -151,17 +151,23 @@ def handle_message(event):
 
 
     elif text == '許願貓貓':
-        
+
             searchUrl = 'https://generateimageapi20241121151339.azurewebsites.net/ImageAI?prompt=cat'
-            url = 'https://generateimageapi20241121151339.azurewebsites.net/images/84df084a-66c9-45da-afff-61ed831fe323.png'
+
+            response = request.get(searchUrl)
+
+            url = response.body
+            
+            # url = 'https://generateimageapi20241121151339.azurewebsites.net/images/84df084a-66c9-45da-afff-61ed831fe323.png'
 
             # url = url.replace("http", "https")
             # app.logger.info("url=" + url)
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
-                    messages=[TextMessage(text=event.message.text)]
-
+                    messages=[
+                        ImageMessage(original_content_url=url, preview_image_url=url)
+                    ]
                 )
             )
 
