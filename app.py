@@ -136,8 +136,8 @@ def handle_message(event):
             )
     elif text == '許願':
             url = 'https://generateimageapi20241121151339.azurewebsites.net/images/cae1f0b7-aba7-453d-9207-f8bcb8b9d2fd.png'
-            url = url.replace("http", "https")
-            app.logger.info("url=" + url)
+            # url = url.replace("http", "https")
+            # app.logger.info("url=" + url)
             line_bot_api.reply_message(
                 ReplyMessageRequest(
                     reply_token=event.reply_token,
